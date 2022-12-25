@@ -53,4 +53,4 @@ ArcFace loss is quite similar to CosFace in terms of computation. However, the p
 ## References
 [1] - Wang, H. et al. (2018). CosFace: Large Margin Cosine Loss for Deep Face Recognition. Available at: https://arxiv.org/abs/1801.09414 <br />
 [2] - Deng, J. et al. (2018). ArcFace: Additive Angular Margin Loss for Deep Face Recognition. Available at: http://arxiv.org/abs/1801.07698. <br />
-[3] - Jégou, H. et al. (2010). Product quantization for nearest neighbor search. Available at: https://lear.inrialpes.fr/pubs/2011/JDS11 /jegou_searching_with_quantization.pdf
+[3] - Jégou, H. et al. (2010). Product quantization for nearest neighbor search. Available at: https://lear.inrialpes.fr/pubs/2011/JDS11/jegou_searching_with_quantization.pdf
