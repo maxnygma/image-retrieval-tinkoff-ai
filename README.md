@@ -26,7 +26,7 @@ CosFace loss is implemented to minimize dot product impact on loss computation a
 
 ### ArcFace
 ArcFace loss is quite similar to CosFace in terms of computation. However, the proper use of margin leads to better geometric properties as the angular margin has the exact correspondence to the geodesic distance. ArcFace training has some important things to consider to get better convergence.
-1) Specific output layers. According to the original paper, the scheme of BN-Dropout-FC-BN outperformes the rest. However, it is shown that for my setup BN-GP-FC works better.
+1) Specific output layers. According to the original paper, the scheme of BN-Dropout-FC-BN outperformes the rest. However, it is shown that for my setup BN-GP works better.
 3) Non-monotonic nature of cosine with margin. If cos(θ + m) > π, then we have to apply something like Taylor's extension to compute an approximate value. This might not needed to be handled explicitly since θ rarely is big enough to cause such an issue.
 2) Advanced residual block setting with different structure and PReLU non-linearity. This feature is not implemented in this work.
 4) Linear operation can be optimized, however in my implementation simple transformation from pytorch.nn.functional is used.
