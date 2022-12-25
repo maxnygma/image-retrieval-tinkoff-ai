@@ -47,7 +47,7 @@ ArcFace loss is quite similar to CosFace in terms of computation. However, the p
 | GP  |  0.723  |
 | GP-BN  |  0.713  | 
 | DP-GP  |  0.734  | 
-| BN-GP  |  **0.758**  | 
+| BN-GP  |  **0.75**  | 
 | BN-DP-GP-BN  |  0.747  | 
 
 ## References
