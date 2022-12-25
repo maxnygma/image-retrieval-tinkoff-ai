@@ -17,12 +17,12 @@ Data split on training and validation sets using StratifiedGroupKFold on "super_
 ### Softmax
 Since general cross-entropy optimizes dot product of vectors and poorly accounts for differences in latent space, the embeddings obtained from training are extremely sparse and show insufficient performance.
 
-![softmax_embeddings](images/ce_embeddings_epoch_5.png)
+<img src="images/ce_embeddings_epoch_5.png" alt="softmax_embeddings" width="500"/>
 
 ### CosFace
 CosFace loss is implemented to minimize dot product impact on loss computation and maximize cosine similarity and inter-class difference by applying L2 normalization on both features and weight vectors.
 
-![cosface_embeddings](images/cosface_embeddings_epoch_11.png)
+<img src="images/cosface_embeddings_epoch_11.png" alt="cosface_embeddings" width="500"/>
 
 ### ArcFace
 ArcFace loss is quite similar to CosFace in terms of computation. However, the proper use of margin leads to better geometric properties as the angular margin has the exact correspondence to the geodesic distance. ArcFace training has some important things to consider to get better convergence.
@@ -31,7 +31,7 @@ ArcFace loss is quite similar to CosFace in terms of computation. However, the p
 2) Advanced residual block setting with different structure and PReLU non-linearity. This feature is not implemented in this work.
 4) Linear operation can be optimized, however in my implementation simple transformation from pytorch.nn.functional is used.
 
-![arcface_embeddings](images/arcface_embeddings_epoch_5.png)
+<img src="images/arcface_embeddings_epoch_5.png" alt="arcface_embeddings" width="500"/>
 
 ## Results
 **Comparison of losses**
@@ -40,6 +40,7 @@ ArcFace loss is quite similar to CosFace in terms of computation. However, the p
 | Softmax  |  0.224  | 0.234 |  0.247  |
 | CosFace  |  0.715  | 0.746 |  0.782  |
 | ArcFace  |  **0.717** | **0.75** |  **0.79**  |
+
 **ArcFace head comparison**
 | Head  | Recall@5 | 
 | ------------- | ------------- |
@@ -50,6 +51,6 @@ ArcFace loss is quite similar to CosFace in terms of computation. However, the p
 | BN-DP-GP-BN  |  0.747  | 
 
 ## References
-[1] - Wang, H. et al. (2018). CosFace: Large Margin Cosine Loss for Deep Face Recognition. Available at: https://arxiv.org/abs/1801.09414
-[2] - Deng, J. et al. (2018). ArcFace: Additive Angular Margin Loss for Deep Face Recognition. Available at: http://arxiv.org/abs/1801.07698.
-[3] - Jégou, H. et al. (2010). Product quantization for nearest neighbor search. Available at: https://lear.inrialpes.fr/pubs/2011/JDS11/jegou_searching_with_quantization.pdf
+[1] - Wang, H. et al. (2018). CosFace: Large Margin Cosine Loss for Deep Face Recognition. Available at: https://arxiv.org/abs/1801.09414 <br />
+[2] - Deng, J. et al. (2018). ArcFace: Additive Angular Margin Loss for Deep Face Recognition. Available at: http://arxiv.org/abs/1801.07698. <br />
+[3] - Jégou, H. et al. (2010). Product quantization for nearest neighbor search. Available at: https://lear.inrialpes.fr/pubs/2011/JDS11 /jegou_searching_with_quantization.pdf
